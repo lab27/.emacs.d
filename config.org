@@ -1,4 +1,4 @@
-* Configuration (from Phil)
+* Configuration (from [[https://github.com/branch14/emacs.d][Phil Hofmann]])
 
 
  #+BEGIN_SRC emacs-lisp
@@ -37,46 +37,46 @@
 #+END_SRC
 
 * navigation
-These customizations make it easier for you to navigate files,
-switch buffers, and choose options from the minibuffer.
+  These customizations make it easier for you to navigate files,
+  switch buffers, and choose options from the minibuffer.
 
 
-"When several buffers visit identically-named files,
-Emacs must give the buffers distinct names. The usual method
-for making buffer names unique adds ‘<2>’, ‘<3>’, etc. to the end
-of the buffer names (all but one of them).
-The forward naming method includes part of the file's directory
-name at the beginning of the buffer name
-https://www.gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html
-#+BEGIN_SRC emacs-lisp
+  "When several buffers visit identically-named files,
+  Emacs must give the buffers distinct names. The usual method
+  for making buffer names unique adds ‘<2>’, ‘<3>’, etc. to the end
+  of the buffer names (all but one of them).
+  The forward naming method includes part of the file's directory
+  name at the beginning of the buffer name
+  https://www.gnu.org/software/emacs/manual/html_node/emacs/Uniquify.html
+  #+BEGIN_SRC emacs-lisp
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
-#+END_SRC
+  #+END_SRC
 
-Turn on recent file mode so that you can more easily switch to
-recently edited files when you first start emacs
-#+BEGIN_SRC emacs-lisp
+  Turn on recent file mode so that you can more easily switch to
+  recently edited files when you first start emacs
+  #+BEGIN_SRC emacs-lisp
 (setq recentf-save-file (concat user-emacs-directory ".recentf"))
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 40)
-#+END_SRC
+  #+END_SRC
 
 *** magit (=F5=/=C-x g=)
-[[https://magit.vc/][Magit Website]]
-#+BEGIN_SRC emacs-lisp
+    [[https://magit.vc/][Magit Website]]
+    #+BEGIN_SRC emacs-lisp
   (package 'magit)
   (global-set-key (kbd "C-x g") 'magit-status)
   (global-set-key (kbd "<f5>") 'magit-status)
-#+END_SRC
+    #+END_SRC
 
-ido-mode allows you to more easily navigate choices. For example,
-when you want to switch buffers, ido presents you with a list
-of buffers in the the mini-buffer. As you start to type a buffer's
-name, ido will narrow down the list of buffers to match the text
-you've typed in
-http://www.emacswiki.org/emacs/InteractivelyDoThings
-#+BEGIN_SRC emacs-lisp
+    ido-mode allows you to more easily navigate choices. For example,
+    when you want to switch buffers, ido presents you with a list
+    of buffers in the the mini-buffer. As you start to type a buffer's
+    name, ido will narrow down the list of buffers to match the text
+    you've typed in
+    http://www.emacswiki.org/emacs/InteractivelyDoThings
+    #+BEGIN_SRC emacs-lisp
   (package 'ido-ubiquitous)
 
   (ido-mode t)
@@ -118,10 +118,10 @@ http://www.emacswiki.org/emacs/InteractivelyDoThings
 
   ;; projectile everywhere!
   (projectile-global-mode)
-#+END_SRC
+    #+END_SRC
 
 * tuning
-#+BEGIN_SRC emacs-lisp
+  #+BEGIN_SRC emacs-lisp
 
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
  (show-paren-mode 1)
@@ -197,7 +197,7 @@ http://www.emacswiki.org/emacs/InteractivelyDoThings
 
 ;; no bell
 (setq ring-bell-function 'ignore)
-#+END_SRC
+  #+END_SRC
 
 *** JavaScript
 #+BEGIN_SRC emacs-lisp
@@ -231,7 +231,7 @@ http://www.emacswiki.org/emacs/InteractivelyDoThings
   (setq css-indent-offset 2)
 #+END_SRC
 *** Other modes & packages
-#+BEGIN_SRC emacs-lisp
+    #+BEGIN_SRC emacs-lisp
   (package 'markdown-mode)
   (package 'yaml-mode)
   (package 'impatient-mode)
@@ -246,7 +246,7 @@ http://www.emacswiki.org/emacs/InteractivelyDoThings
 
   (package 'yasnippet)
 (yas-global-mode 1)
-#+END_SRC
+    #+END_SRC
 
 ** Custom Functions
 *** Indent Buffer (C-`)
@@ -260,8 +260,8 @@ http://www.emacswiki.org/emacs/InteractivelyDoThings
 
 
 *** free-keys
-Provides a function =free-keys=, that shows free keybindings for
-modkeys or prefixes.
+    Provides a function =free-keys=, that shows free keybindings for
+    modkeys or prefixes.
 
 - [[https://github.com/Fuco1/free-keys][Github]]
 #+BEGIN_SRC emacs-lisp
