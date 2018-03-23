@@ -242,10 +242,10 @@
   (package 'paredit)
   (package 'yaml-tomato)
   (package 'emmet-mode)
-(add-hook 'html-mode-hook 'emmet-mode)
+  (add-hook 'html-mode-hook 'emmet-mode)
 
   (package 'yasnippet)
-(yas-global-mode 1)
+  (yas-global-mode 1)
     #+END_SRC
 
 ** Custom Functions
@@ -265,7 +265,7 @@
 
 - [[https://github.com/Fuco1/free-keys][Github]]
 #+BEGIN_SRC emacs-lisp
-  (package 'free-keys)
+(package 'free-keys)
 #+END_SRC
 
 #+BEGIN_SRC emacs-lisp
